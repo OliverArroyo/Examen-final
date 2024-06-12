@@ -1,0 +1,84 @@
+package Competencia;
+
+public class Atletismo extends Individual {
+    String sede;
+    String prueba;
+    String etapa;
+    String fecha;
+    String hora;
+    String recordMundial;
+    String recordPanamericano;
+    String juezArbitro;
+    String juezArbitroSalida;
+    String[] juecesLlegada;
+    String[] juecesAuxiliares;
+    String[] cronometradores;
+    String hits;
+    String ganador;
+    String tiempoGanador;
+    String segundoLugar;
+    String tiempo2doLugar;
+    String tercerLugar;
+    String tiempo3erLugar;
+    String observaciones;
+
+    public Atletismo(String sede, String prueba, String rama, String categoria, String etapa, String fecha, 
+            String hora, String recordMundial, String recordPanamericano, String juezArbitro, 
+            String juezArbitroSalida, String[] juecesLlegada, String[] juecesAuxiliares, 
+            String[] cronometradores, int hits, String ganador, String tiempoGanador, 
+            String segundoLugar, String tiempo2doLugar, String tercerLugar, String tiempo3erLugar, 
+            String observaciones) {
+        super(sede, rama, categoria, sede, Integer.parseInt(etapa), fecha, hora, ganador, segundoLugar, tercerLugar, observaciones, recordMundial, recordPanamericano, hits, tiempoGanador, tiempo2doLugar, tiempo3erLugar);
+        this.prueba = prueba;
+        this.juezArbitro = juezArbitro;
+        this.juezArbitroSalida = juezArbitroSalida;
+        this.juecesLlegada = juecesLlegada;
+        this.juecesAuxiliares = juecesAuxiliares;
+        this.cronometradores = cronometradores;
+    }
+
+    public void setNuevoRecordMundial(String nuevoRecord) {
+        this.recordMundial = nuevoRecord;
+    }
+
+    public void setNuevoRecordPanamericano(String nuevoRecord) {
+        this.recordPanamericano = nuevoRecord;
+    }
+
+    public void setDatosPrueba(String sede, String prueba, String etapa, String fecha, String hora) {
+        this.sede = sede;
+        this.prueba = prueba;
+        this.etapa = etapa;
+        this.fecha = fecha;
+        this.hora = hora;
+    }
+
+    public String getDatosPrueba() {
+        return "Sede: " + sede + ", Prueba: " + prueba + ", Etapa: " + etapa + ", Fecha: " + fecha + ", Hora: " + hora;
+    }
+
+    public void setResultadosFinales(String ganador, String tiempoGanador, String segundoLugar, String tiempo2doLugar, String tercerLugar, String tiempo3erLugar) {
+        this.ganador = ganador;
+        this.tiempoGanador = tiempoGanador;
+        this.segundoLugar = segundoLugar;
+        this.tiempo2doLugar = tiempo2doLugar;
+        this.tercerLugar = tercerLugar;
+        this.tiempo3erLugar = tiempo3erLugar;
+    }
+
+    public String getResultadosFinales() {
+        return "Ganador: " + ganador + " (" + tiempoGanador + "), Segundo Lugar: " + segundoLugar + " (" + tiempo2doLugar + "), Tercer Lugar: " + tercerLugar + " (" + tiempo3erLugar + ")";
+    }
+    public static void main(String[] args) {
+        String[] juecesLlegada = {"Juez 1", "Juez 2"};
+        String[] juecesAuxiliares = {"Juez 3", "Juez 4"};
+        String[] cronometradores = {"Cronometrador 1", "Cronometrador 2"};
+
+        Atletismo comp = new Atletismo("Estadio Nacional", "100m", "Masculino", "Junior", "1", 
+            "2024-06-07", "8:00", "9.58", "9.69", "Juez Principal", "Juez de Salida", 
+            juecesLlegada, juecesAuxiliares, cronometradores, 3, "Oliver Arroyo", "9.75", 
+            "Adan Elias", "9.85", "Martin Soto", "9.95", "Ninguna");
+        System.out.println(comp.getDatosPrueba());
+        System.out.println(comp.getResultadosFinales());
+    }
+}
