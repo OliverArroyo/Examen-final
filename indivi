@@ -1,0 +1,89 @@
+package Competencia;
+
+public class Individual extends Competencia {
+    String recordMundial; 
+    String recordPanamericano;
+    int hits;
+    String tiempoGanador;
+    String tiempo2do;
+    String tiempo3er;
+
+    public Individual(String disciplina, String rama, String categoria, String sede, int etapa, String fecha, String hora, String ganador, String segundoLugar, String tercerLugar, String observaciones, String recordMundial, String recordPanamericano, int hits, String tiempoGanador, String tiempo2do, String tiempo3er) {
+        super(disciplina, rama, categoria, sede, etapa, fecha, hora, ganador, segundoLugar, tercerLugar, observaciones);
+        this.recordMundial = recordMundial;
+        this.recordPanamericano = recordPanamericano;
+        this.hits = hits;
+        this.tiempoGanador = tiempoGanador;
+        this.tiempo2do = tiempo2do;
+        this.tiempo3er = tiempo3er;
+    }
+
+    public String getRecordMundial() {
+        return recordMundial;
+    }
+
+    public void setRecordMundial(String recordMundial) {
+        this.recordMundial = recordMundial;
+    }
+
+    public String getRecordPanamericano() {
+        return recordPanamericano;
+    }
+
+    public void setRecordPanamericano(String recordPanamericano) {
+        this.recordPanamericano = recordPanamericano;
+    }
+
+    public int getHits() {
+        return hits;
+    }
+
+    public void setHits(int hits) {
+        this.hits = hits;
+    }
+
+    public String getTiempoGanador() {
+        return tiempoGanador;
+    }
+
+    public void setTiempoGanador(String tiempoGanador) {
+        this.tiempoGanador = tiempoGanador;
+    }
+
+    public String getTiempo2do() {
+        return tiempo2do;
+    }
+
+    public void setTiempo2do(String tiempo2do) {
+        this.tiempo2do = tiempo2do;
+    }
+
+    public String getTiempo3er() {
+        return tiempo3er;
+    }
+
+    public void setTiempo3er(String tiempo3er) {
+        this.tiempo3er = tiempo3er;
+    }
+    
+    public Object intInfoCompetencia() {
+        StringBuilder info = new StringBuilder();
+        info.append("\nRecord Mundial: ").append(recordMundial);
+        info.append("\nRecord Panamericano: ").append(recordPanamericano);
+        info.append("\nHits: ").append(hits);
+        info.append("\nTiempo Ganador: ").append(tiempoGanador);
+        info.append("\nTiempo 2do: ").append(tiempo2do);
+        info.append("\nTiempo 3er: ").append(tiempo3er);
+        return info.toString();
+    }
+
+    public static void main(String[] args) {
+        Individual comp = new Individual("Atletismo", "Masculino", "Junior", "ITD", 1, "2024-06-07", "8:00", "Oliver Arroyo", "Adan Elias", "Martin Soto", "Ninguna", "9.58", "9.69", 3, "9.75", "9.85", "9.95");
+        System.out.println(comp.InfoCompetencia());
+    }
+
+    public void mostrarInformacion() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarInformacion'");
+    }
+}
