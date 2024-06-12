@@ -1,0 +1,130 @@
+package Competencia;
+
+public class Competencia {
+    String diciplina;
+    String rama;
+    String categoria;
+    String sede;
+    int etapa;
+    String fecha;
+    String hora;
+    String ganador;
+    String SegundoLugar;
+    String TercerLugar;
+    String Observaciones;
+
+    public Competencia(String diciplina, String rama, String categoria, String sede, int etapa, String fecha, String hora, String ganador, String SegundoLugar,  String TercerLugar, String Observaciones ) {
+        this.diciplina = diciplina;
+        this.rama = rama;
+        this.categoria = categoria;
+        this.sede = sede;
+        this.etapa = etapa;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.ganador = ganador;
+        this.SegundoLugar = SegundoLugar;
+        this.TercerLugar = TercerLugar;
+        this.Observaciones = Observaciones;
+       
+    }
+
+    public String getDiciplina() {
+        return diciplina;
+    }
+
+    public void setDiciplina(String diciplina) {
+        this.diciplina = diciplina;
+    }
+    public String getRama() {
+        return rama;
+    }
+
+    public void setRama(String rama) {
+        this.rama = rama;
+    }
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+    public String getSede() {
+        return sede;
+    }
+
+    public void setSede(String sede) {
+        this.sede = sede;
+    }
+    public int getEtapa() {
+        return etapa;
+    }
+
+    public void setEtapa(int etapa) {
+        this.etapa = etapa;
+    }
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+    public String getGanador() {
+        return ganador;
+    }
+
+    public void setGanador(String ganador) {
+        this.ganador = ganador;
+    }
+    public String getSegundoLugar() {
+        return SegundoLugar;
+    }
+
+    public void setSegundoLugar(String SegundoLugar) {
+        this.SegundoLugar = SegundoLugar;
+    }
+    public String getTercerLugar() {
+        return TercerLugar;
+    }
+
+    public void setTercerLugar(String TercerLugar) {
+        this.TercerLugar = TercerLugar;
+    }
+    public String getObservaciones() {
+        return Observaciones;
+    }
+
+    public void setObservaciones(String Observaciones) {
+        this.Observaciones = Observaciones;
+    }
+
+public boolean InfoCompetencia(){
+    System.out.println("diciplina: " + diciplina);
+    System.out.println("rama: " + rama);
+    System.out.println("categoria: " + categoria);
+    System.out.println("sede: " + sede);
+    System.out.println("etapa: " + etapa);
+    System.out.println("fecha: " + fecha);
+    System.out.println("hora: " + hora);
+    System.out.println("ganador: " + ganador);
+    System.out.println("Segundo Lugar: " + SegundoLugar);
+    System.out.println("Tercer Lugar: " + TercerLugar);
+    System.out.println("observaciones: " + Observaciones);
+    return false;
+}
+
+public static void main(String[] args) {
+    Competencia comp = new Competencia("Atletismo", "Masculino", "Junior", "Estadio Nacional", 1, 
+        "2024-06-07", "8:00", "Oliver Arroyo", "Adan Elias", "Martin Soto", "Ninguna");
+    System.out.print(comp.InfoCompetencia());
+}
+
+}
