@@ -1,0 +1,85 @@
+package Competencia;
+
+public class Natacion extends Individual {
+    String sede;
+    String etapa;
+    String estilo;
+    String distancia;
+    String fecha;
+    String hora;
+    String recordMundial;
+    String recordPanamericano;
+    String oficialMayor;
+    String[] juecesSalida;
+    String[] juecesNado;
+    String[] inspectoresVueltas;
+    String hits;
+    String ganador;
+    String tiempoGanador;
+    String segundoLugar;
+    String tiempo2doLugar;
+    String tercerLugar;
+    String tiempo3erLugar;
+    String observaciones;
+
+    public Natacion(String sede, String rama, String categoria, String etapa, String estilo, String distancia, 
+            String fecha, String hora, String recordMundial, String recordPanamericano, String oficialMayor, 
+            String[] juecesSalida, String[] juecesNado, String[] inspectoresVueltas, int hits, 
+            String ganador, String tiempoGanador, String segundoLugar, String tiempo2doLugar, 
+            String tercerLugar, String tiempo3erLugar, String observaciones) {
+        super(sede, rama, categoria, sede, Integer.parseInt(etapa), fecha, hora, ganador, segundoLugar, tercerLugar, 
+                observaciones, recordMundial, recordPanamericano, hits, tiempoGanador, tiempo2doLugar, tiempo3erLugar);
+        this.oficialMayor = oficialMayor;
+        this.juecesSalida = juecesSalida;
+        this.juecesNado = juecesNado;
+        this.inspectoresVueltas = inspectoresVueltas;
+    
+        this.estilo = estilo;
+        this.distancia = distancia;
+    }
+
+    public void setNuevoRecordMundial(String nuevoRecord) {
+        this.recordMundial = nuevoRecord;
+    }
+
+    public void setNuevoRecordPanamericano(String nuevoRecord) {
+        this.recordPanamericano = nuevoRecord;
+    }
+
+    public void setDatosHit(String sede, String etapa, String estilo, String distancia, String fecha, String hora) {
+        this.sede = sede;
+        this.etapa = etapa;
+        this.estilo = estilo;
+        this.distancia = distancia;
+        this.fecha = fecha;
+        this.hora = hora;
+    }
+
+    public String getDatosHit() {
+        return "Sede: " + sede + ", Etapa: " + etapa + ", Estilo: " + estilo + ", Distancia: " + distancia + ", Fecha: " + fecha + ", Hora: " + hora;
+    }
+
+    public void setResultadosFinales(String ganador, String tiempoGanador, String segundoLugar, String tiempo2doLugar, String tercerLugar, String tiempo3erLugar) {
+        this.ganador = ganador;
+        this.tiempoGanador = tiempoGanador;
+        this.segundoLugar = segundoLugar;
+        this.tiempo2doLugar = tiempo2doLugar;
+        this.tercerLugar = tercerLugar;
+        this.tiempo3erLugar = tiempo3erLugar;
+    }
+
+    public String getResultadosFinales() {
+        return "Ganador: " + ganador + " (" + tiempoGanador + "), Segundo Lugar: " + segundoLugar + " (" + tiempo2doLugar + "), Tercer Lugar: " + tercerLugar + " (" + tiempo3erLugar + ")";
+    }
+    public static void main(String[] args) {
+        String[] juecesSalida = {"Juez 1", "Juez 2"};
+        String[] juecesNado = {"Juez 3", "Juez 4"};
+        String[] inspectoresVueltas = {"Inspector 1", "Inspector 2"};
+        
+        Natacion comp = new Natacion("Estadio Nacional", "Masculino", "Junior", "1", "Libre", "200m", 
+            "2024-06-07", "8:00", "9.58", "9.69", "Oficial Mayor", juecesSalida, juecesNado, inspectoresVueltas, 
+            3, "Oliver Arroyo", "9.75", "Adan Elias", "9.85", "Martin Soto", "9.95", "Ninguna");
+        System.out.println(comp.getDatosHit());
+        System.out.println(comp.getResultadosFinales());
+    }
+}
